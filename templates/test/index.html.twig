@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Test index</h1>
     <a href="/logout">Logout</a>
-    <table class="table">
+    {# <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,7 +31,8 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table> #}
 
     <a href="{{ path('app_test_new') }}">Create new</a>
+    <a href="{{path('app_test_index_alltrips')}}">all data</a>
 {% endblock %}

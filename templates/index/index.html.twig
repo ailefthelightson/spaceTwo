@@ -8,13 +8,29 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<div
+		class="container">
+		{# <h1>Hello {{ controller_name }}! ✅</h1> #}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/spaceTwo/spaceTwo/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/spaceTwo/spaceTwo/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
-</div>
+		 Our trips
+		<div class="row row-cols-3 gap-2">
+
+		{% for trip  in trips %}
+
+				<div class="card" style="width: 18rem;">
+					<img src="{{trip.image}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{trip.name}}</h5>
+						<p class="card-text">{{trip.description}}</p>
+						<a href="/details/{{trip.id}}" class="btn btn-primary">Details</a>
+					</div>
+				</div>
+			
+		{% endfor %}
+        </div>
+
+		<a href="/login">Login</a><br>
+
+	</div>
+
 {% endblock %}
